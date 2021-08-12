@@ -5,8 +5,10 @@
       <draggable class="dragArea list-group w-full"
                  group="sortable-list-items"
                  v-model="state.list[0]"
+                 :data-section=0
                  :sort="true"
-                 :move="checkMove">
+                 :move="onMove"
+                 @change="onChange">
         <div class="list-group-item bg-gray-300 m-1 p-3 rounded-md text-center cursor-pointer"
              v-for="element in state.list[0]"
              :key="element.name">
@@ -17,8 +19,10 @@
       <draggable class="dragArea list-group w-full"
                  group="sortable-list-items"
                  v-model="state.list[1]"
+                 :data-section=1
                  :sort="true"
-                 :move="checkMove">
+                 :move="onMove"
+                 @change="onChange">
         <div class="list-group-item bg-gray-300 m-1 p-3 rounded-md text-center cursor-pointer"
              v-for="element in state.list[1]"
              :key="element.name">
@@ -61,13 +65,16 @@ export default defineComponent({
         ]
       ]
     })
-    function checkMove(evt) {
-      console.log('Future index: ' + evt.draggedContext.futureIndex)
-      console.log('element: ' + evt.draggedContext.element.name)
+    function onMove(evt) {
+      console.log('move from section: ' + evt.from.dataset.section + ' index: ' + evt.draggedContext.index + ' to section: ' + evt.to.dataset.section + ' index: ' + evt.draggedContext.futureIndex)
+    }
+    function onChange(evt) {
+      console.log(evt);
     }
     return {
       state,
-      checkMove
+      onMove,
+      onChange
     }
   },
 })
