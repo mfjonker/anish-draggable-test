@@ -70,13 +70,13 @@ export default defineComponent({
           { name: 'John', id: 1 },
           { name: 'Joao', id: 2 },
           { name: 'Jean', id: 3 },
-          { name: 'Gerard', id: 4 }
+          { name: 'Gerard', id: 4 },
+          { name: 'Marco', id: 5 },
+          { name: 'Marcel', id: 6 },
+          { name: 'Martin', id: 7 },
         ],
         [
-          { name: 'Marco', id: 1 },
-          { name: 'Marcel', id: 2 },
-          { name: 'Martin', id: 3 },
-          { name: 'Michael', id: 4 }
+          { name: 'Michael', id: 1 }
         ],
         [
         ]
